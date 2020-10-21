@@ -2,13 +2,15 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const Intern = require("./library/intern");
 const Engineer = require("./library/engineer");
-const Manager = require ("./library/manager");
+const Manager = require("./library/manager");
+
 
 const employees = [];
 
 function init(){
-    startHTML();
     addMember();
+    startHTML();
+    
 }
 
 //User inputs the required info to create a team member card
@@ -113,14 +115,14 @@ function addHTML(member) {
         const email = member.getEmail();
         let data = "";
         if (role === "Engineer") {
-            const gitHub = member.getGithub();
+            const github = member.getGithub();
             data = `<div class="col-6">
             <div class="card mx-auto mb-3" style="width: 18rem">
             <h5 class="card-header">${name}<br /><br />Engineer</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
                 <li class="list-group-item">Email Address: ${email}</li>
-                <li class="list-group-item">GitHub: ${gitHub}</li>
+                <li class="list-group-item">GitHub: ${github}</li>
             </ul>
             </div>
         </div>`;
