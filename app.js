@@ -94,9 +94,9 @@ function startHTML(){
     </head>
     
     <body>
-        <nav class= "navbar navbar-dark bg-dark mb-5">
-        <span class="navbar-brand mb-0 h1 w-100 text-center>Team Profile</span>
-        </nav>
+        
+        <header class="mb-0 h1 w-100 text-center" style= "color:black; background-color: cornflowerblue;">Team Profile</header>
+        <br>
         <div class="container">
         <div class="row">`;
 fs.writeFile("./output/team.html", html, function(err){
@@ -104,7 +104,7 @@ fs.writeFile("./output/team.html", html, function(err){
         console.log(err);
     }
 });
-console.log("start");
+// console.log("start");
 }
 
 function addHTML(member) {
@@ -118,8 +118,8 @@ function addHTML(member) {
             const github = member.getGithub();
             data = `<div class="col-6">
             <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br />Engineer</h5>
-            <ul class="list-group list-group-flush">
+            <h5 class="card-header" style= "color:black">${name}<br /><br />Engineer</h5>
+            <ul class="list-group list-group-flush" style= "color:black">
                 <li class="list-group-item">ID: ${id}</li>
                 <li class="list-group-item">Email Address: ${email}</li>
                 <li class="list-group-item">GitHub: ${github}</li>
@@ -130,8 +130,8 @@ function addHTML(member) {
             const school = member.getSchool();
             data = `<div class="col-6">
             <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br />Intern</h5>
-            <ul class="list-group list-group-flush">
+            <h5 class="card-header" style= "color:black">${name}<br /><br />Intern</h5>
+            <ul class="list-group list-group-flush" style= "color:black">
                 <li class="list-group-item">ID: ${id}</li>
                 <li class="list-group-item">Email Address: ${email}</li>
                 <li class="list-group-item">School: ${school}</li>
@@ -142,8 +142,8 @@ function addHTML(member) {
             const school = member.getSchool();
             data = `<div class="col-6">
             <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br />Intern</h5>
-            <ul class="list-group list-group-flush">
+            <h5 class="card-header" style= "color:black">${name}<br /><br />Intern</h5>
+            <ul class="list-group list-group-flush" style= "color:black">
                 <li class="list-group-item">ID: ${id}</li>
                 <li class="list-group-item">Email Address: ${email}</li>
                 <li class="list-group-item">School: ${school}</li>
@@ -154,8 +154,8 @@ function addHTML(member) {
             const officeNumber = member.getOfficeNumber();
             data = `<div class="col-6">
             <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br />Manager</h5>
-            <ul class="list-group list-group-flush">
+            <h5 class="card-header" style= "color:black">${name}<br /><br />Manager</h5>
+            <ul class="list-group list-group-flush" style= "color:black">
                 <li class="list-group-item">ID: ${id}</li>
                 <li class="list-group-item">Email Address: ${email}</li>
                 <li class="list-group-item">Office Phone: ${officeNumber}</li>
@@ -182,7 +182,7 @@ function finishHTML() {
             console.log(err);
         }
     });
-    console.log("end");
+    // console.log("end");
 }
 
 init();
