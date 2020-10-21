@@ -1,6 +1,4 @@
 const fs = require("fs");
-const util = require("util");
-// const writeFile = util.promisify(fs.writeFile);
 const inquirer = require("inquirer");
 const Intern = require("./library/intern");
 const Engineer = require("./library/engineer");
@@ -15,7 +13,7 @@ function init(){
 
 //User inputs the required info to create a team member card
 function addMember(){
-    return inquirer.prompt([
+    inquirer.prompt([
         {
             type: "input",
             message: "Welcome! Please enter a team member's name: ",
@@ -151,14 +149,14 @@ function addHTML(member) {
             </div>
         </div>`;
         } else {
-            const officePhone = member.getOfficeNumber();
+            const officeNumber = member.getOfficeNumber();
             data = `<div class="col-6">
             <div class="card mx-auto mb-3" style="width: 18rem">
             <h5 class="card-header">${name}<br /><br />Manager</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
                 <li class="list-group-item">Email Address: ${email}</li>
-                <li class="list-group-item">Office Phone: ${officePhone}</li>
+                <li class="list-group-item">Office Phone: ${officeNumber}</li>
             </ul>
             </div>
         </div>`
@@ -173,14 +171,14 @@ function addHTML(member) {
     });
 }
 function finishHTML() {
-    const HTML = `</div>
+    const html = `</div>
     </div>
     </body>
     </html>`;
-    fs.appendFile("./output/team.html", html, functino(err) {
+    fs.appendFile("./output/team.html", html, function(err) {
         if (err) {
             console.log(err);
-        };
+        }
     });
     console.log("end");
 }
