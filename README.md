@@ -1,1 +1,2 @@
 # TeamProfiles
+This node in line app is meant to create a website displaying information about your team! It will add a card per employee, plus information pertinent to their position. Run node app.js to access the prompts, and then open output-team.html to access the final html! 
